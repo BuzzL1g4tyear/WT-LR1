@@ -17,14 +17,41 @@
             <!-- Панель навигации -->
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <!-- меню сайта -->
-
-                <a class="navbar-brand" asp-action="Index" asp-
-                   controller="Home">WebLabsV06| laba 3</a>
-
-                
+                <a class="navbar-brand" href="#">18107085</a>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Лаба 2</a>
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Product" asp-action="Index">Каталог</a>
+                    <a class="nav-item nav-link" asp-area="Admin" asp-controller="" asp-action="/Index">Администрирование</a>
+                </div>
                 <!-- меню сайта - конец -->
                 <!-- Информация пользователя -->
-                <partial name="_UserPartial" />
+                <a class="navbar-text ml-auto">
+                    00,0 руб <i class="fa fa-shopping-cart"></i>
+                </a>
+                <div class="dropdown ml-4 nav-color">
+                    <div class="dropdown-toggle" id="dropdownMenuButton"
+                         data-bs-toggle="dropdown" aria-haspopup="true"
+                         aria-expanded="false">
+                        <img src="images/avatar.jpg" width="30"
+                             alt="User" class="rounded" />
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-item-text">
+                            <img src="~/images/avatar.jpg" width="50" alt="User"
+                                 class="rounded" />
+                            user@gmail.com
+
+                        </div>
+                        <div class="dropdown-divider"></div>
+
+                        <a class="dropdown-item" asp-controller="Cart" asp-
+                           action="Index">Мои товары</a>
+
+                        <a class="dropdown-item" asp-area="Identity"
+                           asp-page="/Account/Logout">Log out</a>
+
+                    </div>
+                </div>
                 <!-- Информация пользователя - конец -->
             </nav> <!-- Панель навигации - конец -->
         </div>
