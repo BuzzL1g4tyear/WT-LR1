@@ -1,6 +1,7 @@
+using System.Security.Principal;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WT_LR1.Data;
+using WT_LR1.DAL.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
