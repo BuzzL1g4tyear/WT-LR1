@@ -32,6 +32,20 @@ public class Startup
         })
         .AddDefaultTokenProviders()
         .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        services.AddAuthentication(options =>
+        {
+            options.DefaultScheme = IdentityConstants.ApplicationScheme;
+            options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+        });
+
+        services.ConfigureApplicationCookie(options =>
+        {
+            options.LoginPath = $"/Identity/Account/Login";
+            options.LogoutPath = $"/Identity/Account/Logout";
+        });
+
+        services.AddRazorPages();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
